@@ -1,29 +1,57 @@
-#include<stdio.h>
-int main()
-{
-	char op;
-	float a,b;
-	printf("Enter a operator ('+','-','*','/')");
-	scanf("%c",&op);
-	printf("Enter first number");
-	scanf("%f",&a);
-	printf("Enter second number");
-	scanf("%f",&b);
-	switch(op){ 
-		case '+'://condition
-		printf("%f+%f=%f",a,b,a+b);//statement 
-		break;
-		
-		case '-':
-			printf("%f-%f=%f",a,b,a/b);
-			break;
-	    
-	    case '*':
-	    	printf("%f*%f=%f",a,b,a*b);
-	    	break;
-	    	
-	    	case '/':
-	    		printf("%f/%f=%f",a,b,a/b);
-	    		break;
-	
-	}}
+#include<iostream>
+using namespace std;
+
+int main() {
+    char op;
+    float a, b;
+
+    while (true) {
+        cout << "==== Simple Calculator ====" << endl;
+        cout << "Menu:" << endl;
+        cout << "1. Addition" << endl;
+        cout << "2. Subtraction" << endl;
+        cout << "3. Multiplication" << endl;
+        cout << "4. Division" << endl;
+        cout << "5. Exit" << endl;
+        cout << "Enter your choice (1/2/3/4/5): ";
+        cin >> op;
+
+        if (op == '5') {
+            break;
+        }
+
+        cout << "Enter the first number: ";
+        cin >> a;
+
+        cout << "Enter the second number: ";
+        cin >> b;
+
+        switch (op) {
+            case '1':
+                cout << "Result: " << a + b << endl;
+                break;
+
+            case '2':
+                cout << "Result: " << a - b << endl;
+                break;
+
+            case '3':
+                cout << "Result: " << a * b << endl;
+                break;
+
+            case '4':
+                if (b != 0) {
+                    cout << "Result: " << a / b << endl;
+                } else {
+                    cout << "Division by zero is not allowed." << endl;
+                }
+                break;
+
+            default:
+                cout << "Invalid choice! Please select a valid option." << endl;
+        }
+    }
+
+    cout << "Goodbye!" << endl;
+    return 0;
+}
